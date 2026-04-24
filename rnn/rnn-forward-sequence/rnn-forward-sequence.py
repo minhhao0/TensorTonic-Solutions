@@ -5,9 +5,15 @@ def rnn_forward(X: np.ndarray, h_0: np.ndarray,
     """
     Forward pass through entire sequence.
     """
+    h_final=None
+    hidden_states=[h_0]
     # YOUR CODE HERE
-    h=[h_0]
-    for t in range(1,X.shape[1]):
-            h_t=np.tanh(h[t-1]@W_hh+X[:,t,:]@W_xh.T+b_h)
-            h.append(h_t)
-    return np.stack(h,axis=1),h[-1]         
+    print(X.shape)
+    for x in range(1,X.shape[1]+1):
+        x_t=X[:,x-1,:]
+        h_prev=hidden_states[x-1]
+        h_t=np.tanh(x_t@W_xh.T+h_prev@W_hh.T+b_h)
+        hidden_states.append(h_t)
+    h_final=hidden_states[-1]
+    hidden_states=hidden_states[1:]
+    return np.stack(hidden_states,axis=1),h_final
