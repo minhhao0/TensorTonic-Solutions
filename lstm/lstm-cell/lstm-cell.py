@@ -16,4 +16,3 @@ def lstm_cell(x_t: np.ndarray, h_prev: np.ndarray, C_prev: np.ndarray,
     C_t=f_t*C_prev+i_t*c_t
     h_t=o_t*np.tanh(C_t)
     return (h_t,C_t)
-    
