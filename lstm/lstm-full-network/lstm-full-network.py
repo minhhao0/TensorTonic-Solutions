@@ -7,7 +7,7 @@ class LSTM:
     def __init__(self, input_dim: int, hidden_dim: int, output_dim: int):
         self.hidden_dim = hidden_dim
         scale = np.sqrt(2.0 / (input_dim + hidden_dim))
-        
+
         self.W_f = np.random.randn(hidden_dim, hidden_dim + input_dim) * scale
         self.W_i = np.random.randn(hidden_dim, hidden_dim + input_dim) * scale
         self.W_c = np.random.randn(hidden_dim, hidden_dim + input_dim) * scale
@@ -16,9 +16,10 @@ class LSTM:
         self.b_i = np.zeros(hidden_dim)
         self.b_c = np.zeros(hidden_dim)
         self.b_o = np.zeros(hidden_dim)
-         
+
         self.W_y = np.random.randn(output_dim, hidden_dim) * np.sqrt(2.0 / (hidden_dim + output_dim))
         self.b_y = np.zeros(output_dim)
+
     def forward(self, X: np.ndarray) -> tuple:
         """
         Forward pass. Returns (y, h_last, C_last).
@@ -54,4 +55,3 @@ class LSTM:
         y=np.stack(y,axis=1)
         cell_state=np.stack(cell_state,axis=1)
         return y,hidden_states[:,-1,:],cell_state[:,-1,:]
-            
