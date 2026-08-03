@@ -5,8 +5,10 @@ def perplexity(prob_distributions, actual_tokens):
     """
     # Write code here
     h=0
-    for i in range(len(actual_tokens)):
+    N=len(actual_tokens)
+    for i in range(N):
         h+=math.log(prob_distributions[i][actual_tokens[i]])
-    h=-h/len(actual_tokens)
-    pp=math.exp(h)
-    return pp
+    h=-h/N
+    return math.exp(h)
+        
+        
