@@ -58,6 +58,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Channel Growth and Compression | Compute DenseNet channel growth across dense blocks and transition compression from the initial channels and growth rate. | https://www.tensortonic.com/research/densenet/densenet-channels |
 | Composite Layer (BN-ReLU-Conv) | Implement a DenseNet composite layer with batch normalization, ReLU, convolution, and feature-map concatenation. | https://www.tensortonic.com/research/densenet/densenet-composite-layer |
 | Dense Block (Concatenative Connectivity) | Implement a DenseNet block that repeatedly concatenates every new layer output with all preceding feature maps. | https://www.tensortonic.com/research/densenet/densenet-dense-block |
+| Full DenseNet Forward Pass | Assemble a DenseNet forward pass with dense blocks, transitions, final normalization, global pooling, and classification. | https://www.tensortonic.com/research/densenet/densenet-forward |
 | Transition Layer | Implement a DenseNet transition layer with batch normalization, ReLU, 1x1 compression, and average pooling. | https://www.tensortonic.com/research/densenet/densenet-transition |
 | Complete LSTM Cell | Build a complete LSTM cell with forget, input, candidate, cell-state, output, and hidden-state calculations. | https://www.tensortonic.com/research/lstm/lstm-cell |
 | Cell State Update | Implement the LSTM cell-state update by combining retained memory with input-gated candidate information. | https://www.tensortonic.com/research/lstm/lstm-cell-state |
