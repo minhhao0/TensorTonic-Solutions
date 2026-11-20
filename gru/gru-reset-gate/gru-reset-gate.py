@@ -8,9 +8,4 @@ def reset_gate(h_prev: np.ndarray, x_t: np.ndarray,
     """
     Returns the float64 reset-gate values.
     """
-    h_prev=np.array(h_prev,dtype=np.float64)
-    x_t=np.array(x_t,dtype=np.float64)
-    W_r=np.array(W_r,dtype=np.float64)
-    b_r=np.array(b_r,dtype=np.float64)
-    r_t=sigmoid(np.concatenate([h_prev,x_t],axis=-1)@W_r.T+b_r)
-    return r_t
+    return sigmoid(np.concatenate([h_prev,x_t],axis=-1)@W_r.T+b_r)
